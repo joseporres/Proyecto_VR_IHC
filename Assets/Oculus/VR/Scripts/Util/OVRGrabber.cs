@@ -85,6 +85,11 @@ public class OVRGrabber : MonoBehaviour
     /// <summary>
     /// The currently grabbed object.
     /// </summary>
+
+    public OVRInput.Controller GetController(){
+        return m_controller;
+    }
+
     public OVRGrabbable grabbedObject
     {
         get { return m_grabbedObj; }
