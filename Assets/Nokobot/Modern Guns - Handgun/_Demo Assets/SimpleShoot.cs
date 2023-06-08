@@ -41,6 +41,10 @@ public class SimpleShoot : MonoBehaviour
 //    }
 //
 
+    public Animator GetAnimator() {
+        return gunAnimator;
+    }
+
     public void StartShoot(){
         gunAnimator.SetTrigger("Fire");
     }
