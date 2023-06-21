@@ -8,19 +8,21 @@ public class VRShoot : MonoBehaviour
     public OVRInput.Button shootButton;
 
     protected OVRGrabbable grabbable;
-    protected AudioSource audio;
+    protected AudioSource audioShoot;
 
 
     // Start is called before the first frame update
     void Start()
     {
        grabbable = GetComponent<OVRGrabbable>();
-       audio = GetComponent<AudioSource>();
+       audioShoot = GetComponent<AudioSource>();
     }
 
     protected virtual void Shoot() {}
-
+    protected virtual void Reload() {}
+    
     void Update() {
         Shoot();
+        Reload();
     }
 }
