@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 0.1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.00026703926, g: 0.028725117, b: 0.030495534, a: 0.1}
+  m_IndirectSpecularColor: {r: 0.00026801965, g: 0.028793294, b: 0.030470515, a: 0.1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1889,6 +1889,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   simpleShoot: {fileID: 806074966}
   shootButton: 8192
+  shootSound: {fileID: 0}
+  reloadSound: {fileID: 0}
 --- !u!1001 &830003388
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2878,6 +2880,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   simpleShoot: {fileID: 795938504}
   shootButton: 8192
+  shootSound: {fileID: 0}
+  reloadSound: {fileID: 0}
 --- !u!1 &1404724190
 GameObject:
   m_ObjectHideFlags: 0
@@ -3952,7 +3956,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 726e329e1719c8f42949342e6a5b42e3, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 726e329e1719c8f42949342e6a5b42e3, type: 3}
@@ -4111,6 +4115,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   simpleShoot: {fileID: 410863255}
   shootButton: 8192
+  shootSound: {fileID: 0}
+  reloadSound: {fileID: 0}
 --- !u!1 &1773035900
 GameObject:
   m_ObjectHideFlags: 0
@@ -4581,3 +4587,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   simpleShoot: {fileID: 839421940}
   shootButton: 8192
+  shootSound: {fileID: 0}
+  reloadSound: {fileID: 0}
