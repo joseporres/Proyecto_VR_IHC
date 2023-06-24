@@ -86,7 +86,7 @@ public class VRShoot : MonoBehaviour
         float minAngle = 75f;
         float maxAngle = 285f;
 
-        if (gunEulerAngles.z > minAngle && gunEulerAngles.z < maxAngle && currentAmmo < maxAmmo)
+        if (gunEulerAngles.z > minAngle && gunEulerAngles.z < maxAngle && currentAmmo == 0)
         {
             StartCoroutine(ReloadWithDelay());
         }
