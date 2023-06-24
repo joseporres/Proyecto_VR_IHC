@@ -25,6 +25,7 @@ public class VRShoot : MonoBehaviour
 
     public AudioClip shootSound;
     public AudioClip reloadSound;
+    public AudioClip noAmmoSound;
 
     void Start()
     {
@@ -65,6 +66,11 @@ public class VRShoot : MonoBehaviour
         textMeshPro.text = currentAmmo.ToString();
 
         float reloadDuration = 0.1f; 
+        AudioSource audioSource = GetComponent<AudioSource>();
+        if (!audioSource.isPlaying) {
+            audioSource.clip = reloadSound;
+            audioSource.Play();
+        }
 
         yield return new WaitForSeconds(reloadDuration);
 
@@ -79,12 +85,6 @@ public class VRShoot : MonoBehaviour
         Vector3 gunEulerAngles = transform.eulerAngles;
         float minAngle = 75f;
         float maxAngle = 285f;
-
-        AudioSource audioSource = GetComponent<AudioSource>();
-        if (!audioSource.isPlaying) {
-            audioSource.clip = reloadSound;
-            audioSource.Play();
-        }
 
         if (gunEulerAngles.z > minAngle && gunEulerAngles.z < maxAngle && currentAmmo < maxAmmo)
         {
