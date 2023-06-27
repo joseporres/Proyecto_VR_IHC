@@ -23,6 +23,10 @@ public class SimpleShoot : MonoBehaviour
 
     void Start()
     {
+        if(bulletPrefab){
+            bulletPrefab.AddComponent<Bullet>();
+        }
+
         if (barrelLocation == null)
             barrelLocation = transform;
 
