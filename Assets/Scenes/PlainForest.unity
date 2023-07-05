@@ -2768,6 +2768,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentHpCounter: 0
+  sprite: {fileID: 21300000, guid: c14b1544e85cbf94ba977331877e3df0, type: 3}
 --- !u!114 &1635488600
 MonoBehaviour:
   m_ObjectHideFlags: 0
