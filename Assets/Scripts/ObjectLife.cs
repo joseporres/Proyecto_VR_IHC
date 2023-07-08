@@ -6,7 +6,7 @@ public class ObjectLife : MonoBehaviour
 {
     [SerializeField]
     protected int maxHp;
-    protected int currentHp;
+    public int currentHp;
 
     // Start is called before the first frame update
     void Start()
