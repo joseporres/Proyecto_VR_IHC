@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.019981232, g: 0.027511813, b: 0.04994892, a: 1}
+  m_IndirectSpecularColor: {r: 0.019981187, g: 0.027511751, b: 0.04994881, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -473,6 +473,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7666986768240843510, guid: 9fedecbd1aa68924b816f15cb97e611a, type: 3}
       propertyPath: m_CullingMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7666986768240843510, guid: 9fedecbd1aa68924b816f15cb97e611a, type: 3}
+      propertyPath: m_ApplyRootMotion
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7893086070402814398, guid: 9fedecbd1aa68924b816f15cb97e611a, type: 3}
@@ -4433,7 +4437,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentHpCounter: 0
   sprite: {fileID: 21300000, guid: c14b1544e85cbf94ba977331877e3df0, type: 3}
---- !u!114 &1635488600
+--- !u!114 &1635488607
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4442,7 +4446,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1635488596}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cc1d2826e133e194191f929a6b3f0601, type: 3}
+  m_Script: {fileID: 11500000, guid: 766b2fedff8def943b35fee85b141be5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   maxHp: 100
