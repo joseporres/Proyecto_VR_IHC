@@ -13,7 +13,7 @@ public class AnimalLife : ObjectLife
         if (currentHp <= 0)
         {
             animator.SetBool("Death", true); // Set the bool parameter in the Animator
-            Destroy(gameObject, 1f);
+            Destroy(gameObject, 15f);
 //            DisableMovement();
         }
     }
