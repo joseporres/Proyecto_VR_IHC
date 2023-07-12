@@ -427,6 +427,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 7666986768240843510, guid: 9fedecbd1aa68924b816f15cb97e611a, type: 3}
+      propertyPath: m_CullingMode
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7893086070402814398, guid: 9fedecbd1aa68924b816f15cb97e611a, type: 3}
       propertyPath: m_Layer
       value: 9
@@ -6429,6 +6433,10 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 67fdf13761bfc234a8602d6bc1348f5f, type: 2}
+    - target: {fileID: 9500000, guid: 0faaca137bc5a794098e6b71f8bb22f6, type: 3}
+      propertyPath: m_CullingMode
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 13700000, guid: 0faaca137bc5a794098e6b71f8bb22f6, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 

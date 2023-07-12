@@ -32,7 +32,7 @@ public class HpCounter : MonoBehaviour
         canvasObj.AddComponent<RectTransform>();
         textMeshPro.transform.SetParent(canvas.transform);
         RectTransform rectTransform = textMeshPro.GetComponent<RectTransform>();
-        rectTransform.localPosition = new Vector3(-39.588f,46.959f, 0.6600075f);
+        rectTransform.localPosition = new Vector3(-39.588f,47.31f, 1.08f);
         rectTransform.localRotation = new Quaternion(0, 0, 0, 0);
         //anchor
         rectTransform.anchorMin = new Vector2(1, 0);
@@ -50,7 +50,7 @@ public class HpCounter : MonoBehaviour
         image.sprite = sprite;
         image.color = Color.white;
         RectTransform imageRectTransform = imageObj.GetComponent<RectTransform>();
-        imageRectTransform.localPosition = new Vector3(-49.866f, 49.71f, 0.314f);
+        imageRectTransform.localPosition = new Vector3(-49.7267f, 49.75126f, 1.08f);
         imageRectTransform.localRotation = new Quaternion(0, 0, 0, 0);
 
         //anchor
@@ -59,7 +59,7 @@ public class HpCounter : MonoBehaviour
         //pivot
         imageRectTransform.pivot = new Vector2(1, 0);
         //size
-        imageRectTransform.sizeDelta = new Vector2(0.05f,0.05f);
+        imageRectTransform.sizeDelta = new Vector2(0.1f,0.1f);
 
         
         
