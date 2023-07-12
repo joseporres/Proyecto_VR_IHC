@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BearWalk : MonoBehaviour
+public class AnimalWalk : MonoBehaviour
 {
     private Animator animator;
 
@@ -16,4 +16,4 @@ public class BearWalk : MonoBehaviour
     {
            
     }
-}
+}   
