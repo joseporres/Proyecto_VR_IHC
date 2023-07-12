@@ -13,6 +13,8 @@ public class CubeScript : MonoBehaviour
     private Animator anim;
     private float distAttack = 5f;
 
+    private GameObject playerObject;
+
     private void Start()
     {
         nma = GetComponent<NavMeshAgent>();
@@ -20,6 +22,8 @@ public class CubeScript : MonoBehaviour
         positionManager = RandomPositionManager.GetInstance();
         anim = GetComponent<Animator>();
         Debug.Log("RandomPosition = " + randomPoints.Length.ToString());
+
+        playerObject = GameObject.FindGameObjectWithTag("Player");
     }
 
     private void Update()
@@ -39,16 +43,30 @@ public class CubeScript : MonoBehaviour
         }
         else {
             float dist = Vector3.Distance(player.position, transform.position);
-            if (dist < distAttack) {
-                anim.SetBool("Attack1", true);
-                anim.SetBool("WalkForward", false);
+            if (dist < distAttack)
+            {
+                if (!anim.GetBool("Attack1"))
+                {
+                    anim.SetBool("Attack1", true);
+                    anim.SetBool("WalkForward", false);
+                    AnimationEvent animationEvent = new AnimationEvent();
+                    animationEvent.time = anim.GetCurrentAnimatorStateInfo(0).length;
+                    animationEvent.functionName = "InvokeTakeDamage";
+                    AnimationClip animationClip = anim.runtimeAnimatorController.animationClips[0]; // Replace 0 with the index of the desired animation clip
+                    animationClip.AddEvent(animationEvent);
+                }
             }
             else {
                 anim.SetBool("WalkForward", true);
+                anim.SetBool("Attack1", false);
                 nma.SetDestination(player.position);
             }
         }
 
+    }
+    public void InvokeTakeDamage()
+    {
+        playerObject.GetComponent<PlayerLife>().TakeDamage(10);
     }
 
     private int GetAvailableRandomPosition()

@@ -14,7 +14,7 @@ public class HpCounter : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        currentHpCounter = this.gameObject.GetComponent<ObjectLife>().currentHp;
+        currentHpCounter = this.gameObject.GetComponent<PlayerLife>().currentHp;
         textObject = new GameObject();
         textMeshPro = textObject.AddComponent<TextMeshPro>();
         textMeshPro.text = currentHpCounter.ToString();
@@ -68,7 +68,7 @@ public class HpCounter : MonoBehaviour
     //  Update is called once per frame
     void Update()
     {
-        currentHpCounter = this.gameObject.GetComponent<ObjectLife>().currentHp;
+        currentHpCounter = this.gameObject.GetComponent<PlayerLife>().currentHp;
         textMeshPro.text = currentHpCounter.ToString();
     }
 }
