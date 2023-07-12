@@ -9,6 +9,7 @@ public class CubeScript : MonoBehaviour
     private GameObject[] randomPoints;
     private int currentRandom;
     private RandomPositionManager positionManager;
+    private Transform player;
 
     private void Start()
     {
@@ -20,16 +21,23 @@ public class CubeScript : MonoBehaviour
 
     private void Update()
     {
-        if (!nma.pathPending && !nma.hasPath)
-        {
-            currentRandom = GetAvailableRandomPosition();
-            if (currentRandom != -1)
+        if (player == null) {
+            if (!nma.pathPending && !nma.hasPath)
             {
-                nma.SetDestination(randomPoints[currentRandom].transform.position);
-                Debug.Log("Moving to Random position " + currentRandom.ToString());
-                positionManager.OccupyPosition(currentRandom); // Mark the position as occupied
+                currentRandom = GetAvailableRandomPosition();
+                if (currentRandom != -1)
+                {
+                    Vector3 destPos = randomPoints[currentRandom].transform.position;
+                    nma.SetDestination(randomPoints[currentRandom].transform.position);
+                    Debug.Log("Moving to Random position " + currentRandom.ToString());
+                    positionManager.OccupyPosition(currentRandom); // Mark the position as occupied
+                }
             }
         }
+        else {
+            nma.SetDestination(player.position);
+        }
+
     }
 
     private int GetAvailableRandomPosition()
@@ -61,6 +69,18 @@ public class CubeScript : MonoBehaviour
     private void OnDestroy()
     {
         positionManager.ReleasePosition(currentRandom); // Release the occupied position
+    }
+
+    void OnTriggerEnter(Collider other) {
+        if (other.CompareTag("Player")) {
+            player = other.transform;
+        }
+    }
+
+    void OnTriggerExit(Collider other) {
+        if (other.CompareTag("Player")) {
+            player = null;
+        }
     }
 }
 
