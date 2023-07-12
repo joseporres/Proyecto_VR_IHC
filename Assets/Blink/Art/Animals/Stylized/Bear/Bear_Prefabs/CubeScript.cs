@@ -10,12 +10,15 @@ public class CubeScript : MonoBehaviour
     private int currentRandom;
     private RandomPositionManager positionManager;
     private Transform player;
+    private Animator anim;
+    private float distAttack = 5f;
 
     private void Start()
     {
         nma = GetComponent<NavMeshAgent>();
         randomPoints = GameObject.FindGameObjectsWithTag("RandomPosition");
         positionManager = RandomPositionManager.GetInstance();
+        anim = GetComponent<Animator>();
         Debug.Log("RandomPosition = " + randomPoints.Length.ToString());
     }
 
@@ -35,7 +38,15 @@ public class CubeScript : MonoBehaviour
             }
         }
         else {
-            nma.SetDestination(player.position);
+            float dist = Vector3.Distance(player.position, transform.position);
+            if (dist < distAttack) {
+                anim.SetBool("Attack1", true);
+                anim.SetBool("WalkForward", false);
+            }
+            else {
+                anim.SetBool("WalkForward", true);
+                nma.SetDestination(player.position);
+            }
         }
 
     }
