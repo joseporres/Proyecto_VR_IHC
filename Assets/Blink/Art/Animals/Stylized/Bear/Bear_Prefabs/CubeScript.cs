@@ -14,6 +14,7 @@ public class CubeScript : MonoBehaviour
     private float distAttack = 5f;
 
     private GameObject playerObject;
+    private bool isAttacking = false;
 
     private void Start()
     {
@@ -26,9 +27,10 @@ public class CubeScript : MonoBehaviour
         playerObject = GameObject.FindGameObjectWithTag("Player");
     }
 
-    private void Update()
+   private void Update()
     {
-        if (player == null) {
+        if (player == null)
+        {
             if (!nma.pathPending && !nma.hasPath)
             {
                 currentRandom = GetAvailableRandomPosition();
@@ -41,33 +43,36 @@ public class CubeScript : MonoBehaviour
                 }
             }
         }
-        else {
+        else
+        {
             float dist = Vector3.Distance(player.position, transform.position);
             if (dist < distAttack)
             {
-                if (!anim.GetBool("Attack1"))
-                {
+                if (!isAttacking) {
+                    isAttacking = true;
+                    Debug.Log("CHANGE STATE TO ATTACK");
                     anim.SetBool("Attack1", true);
                     anim.SetBool("WalkForward", false);
-                    AnimationEvent animationEvent = new AnimationEvent();
-                    animationEvent.time = anim.GetCurrentAnimatorStateInfo(0).length;
-                    animationEvent.functionName = "InvokeTakeDamage";
-                    AnimationClip animationClip = anim.runtimeAnimatorController.animationClips[0]; // Replace 0 with the index of the desired animation clip
-                    animationClip.AddEvent(animationEvent);
+                    float attackDuration = anim.GetCurrentAnimatorStateInfo(0).length;
+                    Invoke("InvokeTakeDamage", attackDuration);
                 }
             }
-            else {
+            else
+            {
                 anim.SetBool("WalkForward", true);
                 anim.SetBool("Attack1", false);
                 nma.SetDestination(player.position);
             }
         }
-
     }
+
     public void InvokeTakeDamage()
     {
+        Debug.Log("Attacking player");
         playerObject.GetComponent<PlayerLife>().TakeDamage(10);
+        isAttacking = false;
     }
+
 
     private int GetAvailableRandomPosition()
     {

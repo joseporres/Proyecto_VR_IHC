@@ -11,6 +11,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/PlainForest.unity
     guid: 790a41aa4474879439824fe7ee3423c7
+  - enabled: 1
+    path: Assets/Scenes/WinScene.unity
+    guid: 59a265ccc0b3d77428f640ff82c5457d
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: f3d626c6e85381e46b2a67657291b2dd, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: d3db829fa33b82e46ae0926f2c4f7958, type: 2}
